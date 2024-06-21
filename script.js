@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(newDiv);
         };
     };
-    
+
     createDivs(4);
-})
+
+    container.addEventListener('mouseover', function(event) {
+        if (event.target.classList.contains('block')) {
+            event.target.style.backgroundColor = 'black';
+        }
+    });
+    
+});
