@@ -20,3 +20,9 @@ html, body {
     flex-wrap: wrap;
     background-color: white;
 }
+
+.block {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
