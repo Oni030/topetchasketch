@@ -10,3 +10,8 @@ html, body {
     overflow: hidden;
     background-color: red;
 }
+
+.container {
+    height: 75vh;
+    width: 75vh; 
+}
