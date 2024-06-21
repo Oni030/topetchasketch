@@ -13,5 +13,9 @@ html, body {
 
 .container {
     height: 75vh;
-    width: 75vh; 
+    width: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
 }
