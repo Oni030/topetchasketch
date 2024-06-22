@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     createDivs(4);
 
+    function removeGrid() {
+        const blocks = document.querySelectorAll('.block');
+        blocks.forEach(block => block.remove());
+    };
 
     function setGrid() {
         const userInput = prompt('Type in the desired number of blocks per side (max. 100)', 4);
@@ -34,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(convertedInput < 2 || convertedInput > 100) {
             return alert('Please put in a number between 2 and 100!');
         } else {
+            removeGrid();
             createDivs(userInput);
         };
     };
