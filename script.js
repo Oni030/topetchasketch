@@ -20,12 +20,23 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     };
 
-    createDivs(4);
+    createDivs(100);
+    
+    let drawColor = 'black';
 
     container.addEventListener('mouseover', function(event) {
         if (event.target.classList.contains('block')) {
-            event.target.style.backgroundColor = 'black';
+            event.target.style.backgroundColor = `${drawColor}`;
         }
     });
     
+    document.addEventListener('click', function(event) {
+        if (event.button === 0) {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            const newColor = `rgb(${r}, ${g}, ${b})`;
+            drawColor = newColor;
+        }
+    });
 });
