@@ -26,18 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setGrid() {
         const userInput = prompt('Type in the desired number of blocks per side (max. 100)', 4);
+        const convertedInput = Number(userInput);
 
-        if (userInput === null) {
-            alert('No Input. Please put in a number between 2 and 100!');
+        if (isNaN(convertedInput)) {
+            return alert('Wrong input type! Please put in a number between 2 and 100.');
+        };
+        if(convertedInput < 2 || convertedInput > 100) {
+            return alert('Please put in a number between 2 and 100!');
         } else {
-            if(userInput > 100) {
-                alert('The input exceeds 100 blocks per side. Please choose a lower number!');
-            } else 
-            if (userInput <= 1) {
-                alert('The input is too low. Please choose an input higher than 1!');
-            } else {
-                createDivs(userInput);
-            };
+            createDivs(userInput);
         };
     };
 
