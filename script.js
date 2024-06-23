@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
     const setGridButton = document.querySelector('.set-grid');
+    const resetButton = document.querySelector('.reset');
     let drawColor = 'black';
     let blockNum = 4;
 
@@ -46,6 +47,21 @@ document.addEventListener('DOMContentLoaded', function() {
     setGridButton.addEventListener('click', function(event) {
         event.stopPropagation();
         setGrid();
+    });
+
+    function reset() {
+        const confirmation = confirm('Do you want to reset the grid?');
+        if (confirmation === false) {
+            return;
+        };
+        removeGrid();
+        createDivs(blockNum);
+        drawColor = 'black';
+    };
+
+    resetButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        reset();
     });
 
     container.addEventListener('mouseover', function(event) {
