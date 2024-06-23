@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
     const setGridButton = document.querySelector('.set-grid');
+    let drawColor = 'black';
 
     function blockSize(amount) {
         return (100/amount) + '%';
@@ -39,15 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return alert('Please put in a number between 2 and 100!');
         } else {
             removeGrid();
-            createDivs(userInput);
+            console.log('drawcolor reset:', drawColor)
+            createDivs(convertedInput);
+            drawColor = `black`;
         };
     };
 
-
-    setGridButton.addEventListener('click', setGrid);
-    
-    
-    let drawColor = 'black';
+    setGridButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        setGrid();
+    });
 
     container.addEventListener('mouseover', function(event) {
         if (event.target.classList.contains('block')) {
