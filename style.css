@@ -20,6 +20,7 @@ html, body {
 }
 
 button {
+    position: relative;
     width: 100px;
     height: 100px;
     background-color: white;
@@ -38,6 +39,30 @@ button {
     border: 20px solid black;
     box-shadow: 20px 20px 10px lightgrey;
     background-color: white;
+}
+
+.set-grid:hover {
+    transition: 0.2s;
+    top: -2px;
+    left: -2px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background: rgb(206, 234, 253);
+}
+
+.reset:hover {
+    transition: 0.2s;
+    top: -2px;
+    left: -2px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background: rgb(255, 208, 208);
+}
+
+.help:hover {
+    transition: 0.2s;
+    top: -2px;
+    left: -2px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background: lightgoldenrodyellow;
 }
 
 .block {
