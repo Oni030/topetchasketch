@@ -19,6 +19,15 @@ html, body {
     flex-direction: column;
 }
 
+button {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: none;
+    box-shadow: 5px 5px 5px lightgrey;
+    margin-bottom: 15%;
+}
+
 .container {
     height: 75vh;
     width: 75vh;
