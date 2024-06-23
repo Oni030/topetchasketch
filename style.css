@@ -8,7 +8,7 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: red;
+    background-color: ghostwhite;
 }
 
 .button-container {
@@ -24,7 +24,7 @@ button {
     height: 100px;
     background-color: white;
     border: none;
-    box-shadow: 5px 5px 5px lightgrey;
+    box-shadow: 2px 2px 5px lightgrey;
     margin-bottom: 15%;
 }
 
@@ -35,6 +35,8 @@ button {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    border: 20px solid black;
+    box-shadow: 20px 20px 10px lightgrey;
     background-color: white;
 }
 
