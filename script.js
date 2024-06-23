@@ -79,4 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
             drawColor = newColor;
         }
     });
+
+    document.addEventListener('dblclick', function(event) {
+        if (event.button === 0) {
+            drawColor = 'black';
+        }
+    });
 });
