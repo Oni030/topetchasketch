@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
     const setGridButton = document.querySelector('.set-grid');
     let drawColor = 'black';
+    let blockNum = 4;
 
     function blockSize(amount) {
         return (100/amount) + '%';
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     };
 
-    createDivs(4);
+    createDivs(blockNum);
 
     function removeGrid() {
         const blocks = document.querySelectorAll('.block');
@@ -36,8 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             removeGrid();
             console.log('drawcolor reset:', drawColor)
-            createDivs(convertedInput);
-            drawColor = `black`;
+            blockNum = convertedInput;
+            createDivs(blockNum);
+            drawColor = 'black';
         };
     };
 
