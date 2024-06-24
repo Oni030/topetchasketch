@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
     const helpPopup = document.querySelector('.help-popup');
-    const setGridButton = document.querySelector('.set-grid');
+    const setGridButton = document.querySelector('.grid');
     const resetButton = document.querySelector('.reset');
     const helpButton = document.querySelector('.help');
     const closeButton = document.querySelector('.close');
