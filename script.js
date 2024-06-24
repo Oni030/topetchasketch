@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
     const helpPopup = document.querySelector('.help-popup');
-    const setGridButton = document.querySelector('.grid');
+    const gridButton = document.querySelector('.grid');
     const resetButton = document.querySelector('.reset');
     const helpButton = document.querySelector('.help');
-    const closeButton = document.querySelector('.close');
 
     let drawColor = 'black';
     let blockNum = 4;
@@ -96,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     createDivs(blockNum);
 
-    setGridButton.addEventListener('click', setGrid);
+    gridButton.addEventListener('click', setGrid);
     resetButton.addEventListener('click', reset);
     container.addEventListener('mouseover', colorBlock);
     document.addEventListener('click', randomColor);
