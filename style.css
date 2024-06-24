@@ -19,7 +19,7 @@ html, body {
     flex-direction: column;
 }
 
-.menu {
+button {
     position: relative;
     width: 100px;
     height: 100px;
@@ -27,33 +27,6 @@ html, body {
     border: none;
     box-shadow: 2px 2px 5px lightgrey;
     margin-bottom: 15%;
-}
-
-.menu:hover {
-    transition: 0.2s;
-    top: -2px;
-    left: -2px;
-    box-shadow: 5px 5px 5px lightgrey;
-}
-
-.set-grid:hover {
-    background: rgb(206, 234, 253);
-}
-
-.reset:hover {
-    background: rgb(255, 208, 208);
-}
-
-.help:hover {
-    background: lightgoldenrodyellow;
-}
-
-.help-popup {
-    display: none;
-    position: absolute;
-    border: 7px solid black;
-    padding: 70px;
-    margin: 70px;
 }
 
 .container {
@@ -68,8 +41,40 @@ html, body {
     background-color: white;
 }
 
+.set-grid:hover {
+    transition: 0.2s;
+    top: -2px;
+    left: -2px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background: rgb(206, 234, 253);
+}
+
+.reset:hover {
+    transition: 0.2s;
+    top: -2px;
+    left: -2px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background: rgb(255, 208, 208);
+}
+
+.help:hover {
+    transition: 0.2s;
+    top: -2px;
+    left: -2px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background: lightgoldenrodyellow;
+}
+
 .block {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.help-popup {
+    display: none;
+    position: absolute;
+    border: 7px solid black;
+    padding: 70px;
+    margin: 70px;
 }
