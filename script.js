@@ -80,17 +80,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    function openPopup(event) {
+    function togglePopup(event) {
         event.stopPropagation();
-        helpPopup.style.display = 'block';
-        container.style.display = 'none';
+        if (helpButton.textContent === 'help') {
+            helpButton.textContent = '×';
+            helpPopup.style.display = 'block';
+            container.style.display = 'none';
+        } else 
+        if (helpButton.textContent === '×') {
+            helpButton.textContent = 'help';
+            helpPopup.style.display = 'none';
+            container.style.display = 'flex';
+        };
     };
-
-    function closePopup(event) {
-        event.stopPropagation();
-        helpPopup.style.display = 'none';
-        container.style.display = 'flex';
-    }
 
     createDivs(blockNum);
 
@@ -99,6 +101,5 @@ document.addEventListener('DOMContentLoaded', function() {
     container.addEventListener('mouseover', colorBlock);
     document.addEventListener('click', randomColor);
     document.addEventListener('dblclick', resetColor);
-    helpButton.addEventListener('click', openPopup);
-    closeButton.addEventListener('click', closePopup);
+    helpButton.addEventListener('click', togglePopup);
 });
