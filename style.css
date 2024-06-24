@@ -70,3 +70,11 @@ button {
     padding: 0;
     box-sizing: border-box;
 }
+
+.help-popup {
+    display: none;
+    position: absolute;
+    border: 7px solid black;
+    padding: 70px;
+    margin: 70px;
+}
