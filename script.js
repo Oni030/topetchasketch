@@ -79,11 +79,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    function openPopup(event) {
+        event.stopPropagation();
+        helpPopup.style.display = 'block';
+        container.style.display = 'none';
+    };
+
     createDivs(blockNum);
-    
+
     setGridButton.addEventListener('click', setGrid);
     resetButton.addEventListener('click', reset);
     container.addEventListener('mouseover', colorBlock);
     document.addEventListener('click', randomColor);
     document.addEventListener('dblclick', resetColor);
+    helpButton.addEventListener('click', openPopup);
 });
