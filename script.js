@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.container');
+    const helpPopup = document.querySelector('.help-popup');
     const setGridButton = document.querySelector('.set-grid');
     const resetButton = document.querySelector('.reset');
+    const helpButton = document.querySelector('.help');
+
     let drawColor = 'black';
     let blockNum = 4;
 
@@ -19,14 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     };
 
-    createDivs(blockNum);
-
     function removeGrid() {
         const blocks = document.querySelectorAll('.block');
         blocks.forEach(block => block.remove());
     };
 
-    function setGrid() {
+    function setGrid(event) {
+        event.stopPropagation();
         const userInput = prompt('Type in the desired number of blocks per side (max. 100)', 4);
         const convertedInput = Number(userInput);
 
@@ -44,12 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     };
 
-    setGridButton.addEventListener('click', function(event) {
+    function reset(event) {
         event.stopPropagation();
-        setGrid();
-    });
-
-    function reset() {
         const confirmation = confirm('Do you want to reset the grid?');
         if (confirmation === false) {
             return;
@@ -59,18 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
         drawColor = 'black';
     };
 
-    resetButton.addEventListener('click', function(event) {
-        event.stopPropagation();
-        reset();
-    });
-
-    container.addEventListener('mouseover', function(event) {
+    function colorBlock(event) {
         if (event.target.classList.contains('block')) {
             event.target.style.backgroundColor = `${drawColor}`;
         }
-    });
+    };
     
-    document.addEventListener('click', function(event) {
+    function randomColor(event) {
         if (event.button === 0) {
             const r = Math.floor(Math.random() * 255);
             const g = Math.floor(Math.random() * 255);
@@ -78,11 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const newColor = `rgb(${r}, ${g}, ${b})`;
             drawColor = newColor;
         }
-    });
+    };
 
-    document.addEventListener('dblclick', function(event) {
+    function resetColor(event) {
         if (event.button === 0) {
             drawColor = 'black';
         }
-    });
+    };
+
+    createDivs(blockNum);
+    
+    setGridButton.addEventListener('click', setGrid);
+    resetButton.addEventListener('click', reset);
+    container.addEventListener('mouseover', colorBlock);
+    document.addEventListener('click', randomColor);
+    document.addEventListener('dblclick', resetColor);
 });
