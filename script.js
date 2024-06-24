@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const setGridButton = document.querySelector('.set-grid');
     const resetButton = document.querySelector('.reset');
     const helpButton = document.querySelector('.help');
+    const closeButton = document.querySelector('.close');
 
     let drawColor = 'black';
     let blockNum = 4;
@@ -85,6 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
         container.style.display = 'none';
     };
 
+    function closePopup(event) {
+        event.stopPropagation();
+        helpPopup.style.display = 'none';
+        container.style.display = 'flex';
+    }
+
     createDivs(blockNum);
 
     setGridButton.addEventListener('click', setGrid);
@@ -93,4 +100,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', randomColor);
     document.addEventListener('dblclick', resetColor);
     helpButton.addEventListener('click', openPopup);
+    closeButton.addEventListener('click', closePopup);
 });
