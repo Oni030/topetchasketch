@@ -82,11 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function togglePopup(event) {
         event.stopPropagation();
         if (helpButton.textContent === 'help') {
-            helpButton.textContent = '×';
+            helpButton.textContent = 'X';
             helpPopup.style.display = 'block';
             container.style.display = 'none';
         } else 
-        if (helpButton.textContent === '×') {
+        if (helpButton.textContent === 'X') {
             helpButton.textContent = 'help';
             helpPopup.style.display = 'none';
             container.style.display = 'flex';

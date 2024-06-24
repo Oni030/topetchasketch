@@ -1,4 +1,5 @@
 html, body {
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -23,6 +24,9 @@ html, body {
     position: relative;
     width: 100px;
     height: 100px;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
     background-color: white;
     border: none;
     box-shadow: 2px 2px 5px lightgrey;
